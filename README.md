@@ -1,15 +1,26 @@
 # Bot Clash Royale - Code Explanation
 
-## Overview
-Ce module Python, `bot.py`, implémente un bot pour Clash Royale qui décide automatiquement des actions à prendre en jeu basé sur l'analyse de l'état de la partie. Le code utilise des calculs de statistiques, des choix stratégiques basés sur le DPS et les points de vie, et des décisions conditionnelles pour optimiser les actions du joueur.
+## Configuration
+### Adapting to Screen Dimensions
+Avant de commencer à utiliser le bot, tu dois adapter les coordonnées aux dimensions de l'écran de ton téléphone pour optimiser le placement des cartes. Modifie les variables suivantes dans le code selon la taille et la résolution de ton écran :
+
+```python
+y_nilieu = 350  # Coordonnée Y pour le milieu du terrain
+x_gauche = 90   # Coordonnée X pour le côté gauche du terrain
+x_droit = 340   # Coordonnée X pour le côté droit du terrain
+y_tour = 400    # Coordonnée Y pour la position de la tour
+y_fin = 600     # Coordonnée Y pour la fin du terrain
+```
+
+Ces ajustements sont cruciaux pour que le bot fonctionne correctement et effectue des placements précis de cartes.
 
 ## Details of the Code
 
 ### Class: `bot`
-- **Purpose**: Automatiser les décisions en fonction de l'état de la partie.
+- **Purpose**: T'aider à automatiser les décisions en fonction de l'état de la partie.
 - **Methods**:
   - `__init__`: Initialise les dictionnaires d'état internes `A` et `E`.
-  - `get_action(state)`: Méthode principale qui analyse l'état du jeu et décide de l'action à prendre. Utilise plusieurs sous-fonctions pour des décisions spécifiques.
+  - `get_action(state)`: Méthode principale qui analyse l'état du jeu et décide de l'action à prendre, utilisant plusieurs sous-fonctions pour des décisions spécifiques.
 
 ### Key Functions and Decision Processes:
 
@@ -39,8 +50,3 @@ Ce module Python, `bot.py`, implémente un bot pour Clash Royale qui décide aut
 2. **Data Extraction**: Extrait des informations telles que les cartes jouables et l'état des tours.
 3. **Strategic Decisions**: Détermine si le bot doit défendre ou attaquer en fonction des calculs des DPS et des points de vie sur le champ de bataille.
 4. **Action Execution**: Choisit et exécute l'action de poser une carte sur le terrain.
-
-Ce code est conçu pour faciliter la prise de décision automatisée dans Clash Royale, en utilisant des analyses basées sur les conditions actuelles de jeu pour maximiser l'efficacité des actions du joueur.
-
-## Usage:
-- Utilisez cette classe dans votre framework de bot pour Clash Royale pour automatiser les décisions en fonction de l'état dynamique du jeu.
